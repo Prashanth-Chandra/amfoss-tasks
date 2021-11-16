@@ -1,0 +1,119 @@
+Docs link : https://docs.google.com/document/d/122s0-Q01-aQahpCtbeNwv4DoHUJ8P44ru2Wl9yomku0/edit?usp=sharing
+bandit.labs.overthewire.org
+level 0  - Username : bandit0 
+           Password : bandit0
+
+level 1  - Username : bandit1
+           Password : boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+level 2  - Username : bandit2
+           Password : CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+level 3  - Username : bandit3
+           Password : UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+level 4  - Username : bandit4
+           Password : pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+level 5  - Username : bandit5
+           Password : koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+level 6  - Username : bandit6
+           Password : DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+ 
+level 7  - Username : bandit7
+           Password : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+level 8  - Username : bandit8
+           Password : cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+level 9  - Username : bandit9
+           Password : UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+level 10 - Username : bandit10
+           Password : truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+level 11 - Username : bandit11
+           Password : IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+level 12 - Username : bandit12
+           Password : 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+level 13 - Username : bandit13
+	   Password : 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+level 14 - Username : bandit14
+
+	   The authenticity of host 'localhost (127.0.0.1)' can't be established.
+	   ECDSA key fingerprint is SHA256 : 98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+	   Are you sure you want to continue connecting (yes/no)? yes
+	   
+	   Password : 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+
+Level 15 - Username : bandit15
+	   Password : BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Level 16 - Username : bandit16
+	   Password : cluFns7wTiGryunymYOu4RcffSxQluehd
+
+Level 17 - Username : bandit17
+	   Password : xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+
+Level 18 - Username : bandit18
+	   Password : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+Level 19 - Username : bandit19
+	   Password : IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+Level 20 - Username : bandit20
+	   Password : GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+Level 21 - Username : bandit21
+	   Password : gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+
+
+Method:
+Level 0 : I used PuTTY software to access the ssh and used the command 'ls' to list all the files in the home directory and used 'cat' command to read the readme file to get the level 1 password.
+
+Level 1 : I used the 'ls' command to list the files on the home directory and found the file '-' which was unaccessible by 'cat' command so using the "Helpful Reading Material" given in below the level description I used 'cat ./-' which gave me the password for level 2.
+
+Level 2 : I used the same procedure as in level 1 but was unable to get the password so i tried by keeping the file name in single quotations (cat 'spaces in this filename') through wich i found the password for the next level. 
+
+Level 3 : I used the same procedure as in level 1 but I was inable to access the 'inhere' file so i tried all the commands in 'Commands you may need to solve this level' and when I used 'find inhere' i got 'inhere/.hidden' so i used 'cat inhere/.hidden' which gave me the password for level 4
+
+Level 4 : It is very similar to the level 3 but here after we use 'find inhere' we get 9 files which I opened one by one using 'cat inhere/-file01' and in the 'inhere/-file07' file I found the password for level 5
+
+Level 5 : I first used the command 'ls' and then 'find inhere'(i understood that i can even use 'cd inhere/' and do 'ls' which will do the same) which displayed a unacceptible number of files which cannot be checked manually as done in level 4. So with the help of google i found out about all the features about 'find' and found that we can even search the file size so i used its syntax and used 'find . -size 1033c' which gave me the exact file and i used 'cat ./maybehere07/.file2'which gave me the password for level 6.  
+
+Level 6 : First i used the command 'ls' which did not work so i did 'find . -size 33c' but even that gave me nothing so with the knowledge gained about the 'find' feature i typed 'find /-user bandit7' which gave me a lot of files so i narrowed the search by 'find / -user bandit7 -group bandit6 -size 33c' which gave a lot few files out of which only one was accessible '/var/lib/dpkg/info/bandit7.password' and using 'cat /var/lib/dpkg/info/bandit7.password' i got the password for level 7
+
+Level 7 : I used the 'grep' feature which i learnt from 'grep --help' and i used 'grep millionth data.txt' through which i got the password for level 8
+
+Level 8 : I used the 'ls' command and then used 'data.txt' and then using function of 'sort' and 'uniq' i used the command 'sort data.txt | uniq -u' which i learnt from https://www.linuxjournal.com/content/back-basics-sort-and-uniq and got the password for level 9
+
+Level 9 : I used the 'ls' command and then used 'cat data.txt' which was very messy so i tried using 'grep = data.txt' which did not give any useful output so i learnt about the string function mentioned in 'Commands you may need to solve this level' given in the website and used the command 'string data.txt | grep =' which gave me the password for level 10
+
+Level 10: This is very easy compared previous few tasks as by using 'base64 --help' it was easy to solve sao i used 'base64 -d data.txt' and i got the password for the 11th level
+
+Level 11: This required a lot of effort as i had to search for many websites for the proper syntax of the 'tr' function and i used the code ' cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m''(Explanation: cat data.txt gives which file to be shown and then' | tr ' is the translate command(i think) and 'A-Za-z' specifies the text to be modified while 'N-ZA-Mn-za-m' shows that the alphabets A-Z(SPLIT INTO A-M AND N-Z) are being converted into N-Z and A-M. the same is true for the lowercase letters. It gave me the password for level 12
+
+Level 12: This was the hardest one till now i had to learn many types of compressions like gzip , tar , dz2 ,etc. first i used 'ls' to view thw files and found data.txt and when i opened it it was in some wierd format so i used 'file data.txt'and in the website as mentioned i created a file int the /tmp folder and named temp and copied the data.txt file to it since it was in mentioned about hexdump i went into the /tmp/temp folder and used "xxd -r data.txt data" which reversed(-r) the hexdump file and made it into 'data' and tried to open it but still it was not in a readable format so i used 'file data' which shoed me that it was compressed using gzip so i renamed it to 'data.gz' using the 'mv' command and used 'gzip -d data.gz' to decode(-d) the compession into file 'data' and tried to open it and it was not in a readable format so i used 'file data' which gave me bzip2 so i converted it to 'data.bz2' and decoded it using 'bzip2 -d data.bz2' and used 'file data' which showed that it was gzip compressed so i 	  renamed it to 'data.gz' and used 'gzip -d data.gz' next when i used 'file data' it showed 'POSIX tar archive' which i had to google as it did not have any '--help' menu and from the info form google i used 'tar -xvf data' which i dont understand . and it gave me 'data5.bin' so i used 'file data5.bin' which was again an 'POSIX tar archive' so i blindly used the same command 'tar -xvf data5.bin' which gave me 'data6.bin' which was bzip2 compressed so i renamed it to 'data6.bz2' and used 'bzip2 -d data6.bz2' and when i used 'file data6' it again came as 'POSIX tar ..' i was frustated and closed it thinking i made mistake and then when i asked my friend(studying in PES,Banglore) about the level he told that it had many compressions and told me not to stop. so i typed it again and then used 'tar -xvf data6' which gave me 'data8.bin' which was again an 'gzip' compressed file so i renamed it to 'data8.gz' and used 'gzip -d data8.gz' which was an 'ASCII text' file so i used 'cat data8' and finally after 4 days of  	  work i got the password for the level 13
+
+Level 13: It was a different type of level as there was no password fr the next level instead of it there was private SSH key and in the 'Commands you may need to solve this level' i used ssh -help which showed the the structure as 'ssh [user@]hostname [command]' where hostname is 'localhost' and i thought the 'user@' is 'bandit14'(as it was for the next level) so i used 'ssh bandit14@localhost ' and sfter that i tried the commands '-j sshkey.private','-L sshke..','-p' but it was not correct so i tried to know more about the commands in google and found that we need to use '-i' followed by the key so i used 'ssh bandit14@localhost -i sshkey.private' and i typed 'yes' when prompted to continue connecting. NOTE:TO USE THE PRIVATE KEY I MUST BE IN THE SAME FILE WHERE THE FILE IS LOCATED (I LEARNT IT WHEN I TRIED TO ACCESS IT FROM /etc/bandit_pass INSTEAD OF THE /home/bandit13 
+
+Level 14: First i used 'ls' which did not show ant files do i used 'cd /.' to go the basic file and then i used 'ls' and then went to 'etc'(It took me 10 min to realise that they mentioned in level 13 the password for level 14 is in '/etc/bandit_pass/bandit14') but when i tried to enter it using 'cd' it did not work so i did 'cd /etc/bandit_pass' and used 'ls' command which showed many filed from 'bandit0' to 'bandit33' so i used 'file bandit14' and since it was an ASCII text file i used 'cat bandit14' which gave the password for the next level but when i tried to enter it using hostname 'bandit.labs.overthewire.org' and port as '30000' but it just gave a blank screen i repeated it a few times but it did not work. so i realised that we need to use the 'ssh' or other commands mentioned in the website so i had to redo the 13th level again. after entering the level i directly went to the /bandit_pass folder and tried 'ssh bandit15@localhost [:30000]'(learnt form ssh --h) which worked and i used the password for           the level which i found in the file bandit15 but it did not work so i tried to learn about the next command 'telnet' and i used 'telnet bandit15@localhost 30000' and it wasnot working so i used 'telnet localhost 30000' which worked and then i used 'ssh bandit15@localhost' but i had to use it twice (i dont know the reason why it did not work for the first time) and then i tried to enter the psaaword for level 14 which gave me an othewr psaaword
+
+Level 15: I used 'ssh bandit15@localhost' to connect to the bandit15 server i used it so that i need nnot exit the ssh and re-enter all the details(since i am using PuTTY software)  I learnt about openssl and s_client from google in website https://docs.pingidentity.com/bundle/solution-guides/page/iqs1569423823079.html (i did not use 'openssl s_client --help' because it looked very complex) where i learnt that the structure for the command is 'openssl s_client -connect <host name>:<port>' so i used 'localhost:30001' in the last part. but it did not give any password instead it showed a 'server certificate' so i read the level goal once again and they mentioned to to submit the level password again so i ran the command again and after the 'server certificate' i pasted the level 15 password there and i got a new password there and i used 'ssh bandit16@localhost' to connect to the next level
+
+Level 16: In this level there are 1000 ports (from 31000 to 32000) so from the 'helpful reading material ' i found nothing useful in the wiki page and in google except that 'nmap' is the base command so i used 'nmap --help' and read it a few times. then i used 'nmap localhost -p 31000-32000' from "TARGET SPECIFICATION:" and "PORT SPECIFICATION AND SCAN ORDER:" menus in the --help which showed 5 ports(31046,31518,31691,31790,31960) which are open so i used 'openssl s_client -connect localhost:<port>' for all the 5 ports the port 31046 did not take any value and 31518 returned the same value and i did not understand how to exit the port as it kept on returning the same lines i wrote so i exited the ssh and connected again. 31691 did not take any input but the port 31790 gave an rsa private key so i copied the key and created a file in '/tmp' folder and used the command 'nano key.private' and pasted the key there and pressed 'ctrl + x' which prompted me to save which i did then i used the command 
+	  "chmod 600 key.private" to apply premissions and used "ssh bandit17@localhost -i key.private" and pressed yes
+
+Level 17: I used 'diff --help' as it is the only command in the 'Commands you may need to solve this level' which looks like it can find the differences and used the command 'diff passwords.old passwords.new' which gave me 2 passwords and i coppied both of them and tried logging to bandit18 using 'ssh bandit18@localhost' with both and found the correct one as the first password(w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii) was invalid then i got 'Byebye !' and in the next line 'Connection to localhost closed.' for the second one. I also went into the '/etc/bandit_pass' folder using 'cd' command and used 'cat bandit17' to get the password for bandit17(so that i can directly access the level instead of doing the 16th level everytime i want to get in to level 17)
+
+Level 18: In the previous level i got disconnected when i tried to login using the second password although it was correct so i learnt about '.bashrc' from google and tried many differnt commands in ssh but when i used '-t' i got access so i used 'ls' and then i used 'cat readme' and got the next password
+
+Level 19: I used the 'ls' command then i tried to use 'cat bandit20-do' which did not give any good output and since they mentioned to "Execute" it i tried running the file using the command './bandit10-do' which told me to run it again and i used the dame example command './bandit20-do id' then i understood that i can access all the files which can only be accessed by bandit20 using './bandit20-do' as a PREFIX so i used './bandit20-do cat /etc/bandit_pass/bandit20' which gave the password for bandit 20 with the permissions. (and i even tried to complete level 20 without using to login as bandit20 but it did not work)
+
+Level 20: I used the 'ls' command and i saw 'suconnect' in a red box similar to the 'bandit20-do' it told that it will connect to a port on localhost and since they did not mention any specific port(in the webiste) i used the port 2004 using './suconnect 2004' but it was unable to connect so i went back to the website and searched for the commands in the 'commands required' and tried to learnt about 'nc'(netcat) using 'nc -h' but it was not that helpful for this level so i used google to to learn about it and in the website "https://www.tecmint.com/netcat-nc-command-examples/" in the "Create a Command Line Chat Server" i found the command "$ nc -l -vv -p <port>" so i used "nc -l -vv -p 2004" but i did not understand what to do from there so i again googled it and found that we need to open an other terminal to connect to it so i used an another terminal and then connected to it after logging on bandit20 and then entered the command './suconnect 2004' then i got the message in the port window as "connect to   	          [127.0.0.1] from localhost [127.0.0.1] 60758" and then entered the password from this terminal and then got password for the next level (used a little help form my firend for this level).
