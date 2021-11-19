@@ -1,0 +1,3 @@
+# Task - 15
+
+For this task I learnt few things about loops(This was the second task I did after the Bandit, so i did not know much about python) and how to apply them and then used forloops for most of the problems except for the 4th problem (I think) I was getting a timeout error if I am using the loops so I made it in such a way that first I found all the palindromic numbers in the given range and then I checked the the condition which reduced the time taken if there are multiple testcases in one run. 

@@ -7,7 +7,7 @@ function myButton2(){
     window.alert("Current time is "+time)
 }
 function myButton3(){
-    document.body.style.backgroundColor = "green";
+    document.body.style.background="green";
 }
 function myButton4(){
     location.reload();
