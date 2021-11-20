@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
         body: Center(
 
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.network('https://raw.githubusercontent.com/amfoss/tasks/main/task-6/resources/welcome.png'),
               Text(
