@@ -14,12 +14,13 @@ class HomePage extends StatelessWidget {
         //   ),
         // ),
         appBar: AppBar(
+          backgroundColor: Color(0xFFD3C9C6)
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => goToOnBoarding(context),
           ),
           title: Text("Welcome"),
-         centerTitle: true,
+         centerTitle: false,
     ),
 
 
@@ -38,7 +39,7 @@ class HomePage extends StatelessWidget {
               ),
               Text(
                 '    Hi,I am form Hyderabad. I like to play Violin and\n\n   read comics(not marvel or dc tho). I am looking\n\n forward for attending offline classes in the college.',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
 
             ],
