@@ -1,6 +1,6 @@
 # Task - 6
 
-# The Updated recording is in Recording.mp4 
+# The Updated recording is in ScrRec.mp4 
 
 1. I saw few tutroials from youtube to install android studio and flutter
 2. But I had an error something like `dev/kvm device:permission denied` so I tried all the debugging methods mentioed in google (but the problem was I forgot to restart my system) so on the next day it got installed
