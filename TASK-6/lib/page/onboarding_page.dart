@@ -75,6 +75,6 @@ class OnBoardingPage extends StatelessWidget {
         bodyTextStyle: TextStyle(fontSize: 20),
         descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
         imagePadding: EdgeInsets.all(24),
-        pageColor: Colors.grey,
+        pageColor: Color(0xFFD3C9C6),
       );
 }
