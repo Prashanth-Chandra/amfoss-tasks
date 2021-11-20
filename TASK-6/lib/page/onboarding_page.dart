@@ -39,7 +39,7 @@ class OnBoardingPage extends StatelessWidget {
           showSkipButton: true,
           skip: Text('Skip'),
           onSkip: () => goToHome(context),
-          next: Text('Next'),
+          //next: Text('Next'),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
           globalBackgroundColor: Theme.of(context).primaryColor,
@@ -61,8 +61,8 @@ class OnBoardingPage extends StatelessWidget {
       Center(child: Image.asset(path, width: 350));
 
   DotsDecorator getDotDecoration() => DotsDecorator(
-        color: Color(0xFFBDBDBD),
-        //activeColor: Colors.orange,
+        color: Color(0xF2BDB3B0),
+        activeColor: Colors.black,
         size: Size(10, 10),
         activeSize: Size(22, 10),
         activeShape: RoundedRectangleBorder(
